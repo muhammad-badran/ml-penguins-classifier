@@ -57,7 +57,7 @@ def target_encode(val):
   return target_mapper[val]
 
 with st.expander('Input Features'):
-  st.write('**Input Penguuins**')
+  st.write('**Input Penguins**')
   input_df
   st.write('**Combined Dataset**')
   input_penguins
