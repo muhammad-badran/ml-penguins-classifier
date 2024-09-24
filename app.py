@@ -1,4 +1,5 @@
 import streamlit as st
+import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
@@ -84,4 +85,7 @@ df_result.columns = ['Adelie', 'Chinstrap', 'Gentoo']
 df_result = df_result.rename(columns={'0':'Adelie', '1': 'Chinstrap', '2':'Gentoo'})
 df_result 
 
-
+# Display the predicted speices
+st.subheader('Predict Species')
+penguins_species = np.array(['Adelie', 'Chinstrap', 'Gentoo'])
+st.success(str(penguins_species[pred])
