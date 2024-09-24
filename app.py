@@ -83,9 +83,34 @@ prediction_proba = clf.predict_proba(input_row) # gives the probability of each 
 df_result = pd.DataFrame(prediction_proba)
 df_result.columns = ['Adelie', 'Chinstrap', 'Gentoo']
 df_result = df_result.rename(columns={'0':'Adelie', '1': 'Chinstrap', '2':'Gentoo'})
-df_result 
 
 # Display the predicted speices
 st.subheader('Predict Species')
+st.dataFrame(df_result
+             column_config={
+               'Adelie': st.column_config.ProgressColumn(
+                 'Adelie',
+                 format='%f',
+                 width='medium',
+                 min_value=0,
+                 max_value=1
+               ),
+               'Chinstrap': st.column_config.ProgressColumn(
+                 'Chinstrap',
+                 format='%f',
+                 width='medium',
+                 min_value=0,
+                 max_value=1
+               ),
+               'Gentoo': st.column_config.ProgressColumn(
+                 'Gentoo',
+                 format='%f',
+                 width='medium',
+                 min_value=0,
+                 max_value=1
+               )
+             }, hide_index=True)
 penguins_species = np.array(['Adelie', 'Chinstrap', 'Gentoo'])
-st.success(str(penguins_species[pred]))
+st.success(str(penguins_species[pred][0]))
+
+
