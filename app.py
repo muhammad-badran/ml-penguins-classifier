@@ -41,7 +41,6 @@ input_data = {'island': island,
              }
               
 input_df = pd.DataFrame(input_data, index=[0])
-X = X_raw.values
 
 with st.expander('Input Features'):
   st.write('**Input Penguins**')
@@ -72,7 +71,7 @@ with st.expander('**Data Preparation**'):
 
 # Model Training and Inference
 clf = RandomForestClassifier()
-clf.fit(X,y)
+clf.fit(X_raw,y)
 
 pred = clf.predict(input_row)
 prediction_proba = clf.predict_propa(input_row)
