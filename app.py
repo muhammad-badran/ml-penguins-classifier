@@ -41,6 +41,7 @@ input_data = {'island': island,
              }
               
 input_penguin = pd.DataFrame(input_data, index=[0])
+input_penguins = pd.concat([X_raw, input_penguin], axis=0)
 
 with st.expander('Input Features'):
   st.write('**Input Penguin**')
@@ -49,7 +50,7 @@ with st.expander('Input Features'):
 # Data Preparation
 # Encode categorical data in X
 encode = ['island', 'gender']
-df_penguins = pd.get_dummies(X_raw, prefix=encode)
+df_penguins = pd.get_dummies(input_penguins, prefix=encode)
 
 # Encode y
 target_mapper = {'Adelie': 0,
