@@ -76,9 +76,11 @@ with st.expander('**Data Preparation**'):
 clf = RandomForestClassifier()
 clf.fit(df_penguins[1:],y)
 
-pred = clf.predict(input_row)
-pred
+pred = clf.predict(input_row) # gives the predicted class
+prediction_proba = clf.predict_proba(input_row) # gives the probability of each class
 
-prediction_proba = clf.predict_proba(input_row)
+df_result = pd.DataFrame(prediction_proba)
+df_result.column = [{0:'Adelie', 1: 'Chinstrap', 2:'Gentoo'}]
+df_result 
 
 
