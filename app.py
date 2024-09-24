@@ -46,9 +46,6 @@ X = input_df.values
 with st.expander('Input Features'):
   st.write('**Input Penguins**')
   input_df
-  st.write('**Combined Dataset**')
-  input_penguins
-
 
 # Data Preparation
 # Encode categorical data in X
