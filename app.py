@@ -40,11 +40,11 @@ input_data = {'island': island,
               'gender': gender
              }
               
-input_df = pd.DataFrame(input_data, index=[0])
+input_penguin = pd.DataFrame(input_data, index=[0])
 
 with st.expander('Input Features'):
   st.write('**Input Penguin**')
-  input_df
+  input_pengiun
 
 # Data Preparation
 # Encode categorical data in X
@@ -64,6 +64,7 @@ y = y_raw.apply(target_encode)
 
 with st.expander('**Data Preparation**'):
   st.write('**Encode X (input penguin)**')
+  input_row = pd.get_dummies(input_penguin, prefix=encode)
   input_row
   st.write('**Encoded X**')
   df_penguins
