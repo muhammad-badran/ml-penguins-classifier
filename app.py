@@ -80,6 +80,7 @@ pred = clf.predict(input_row) # gives the predicted class
 prediction_proba = clf.predict_proba(input_row) # gives the probability of each class
 
 df_result = pd.DataFrame(prediction_proba)
+df_result.columns = ['Adelie', 'Chinstrap', 'Gentoo']
 df_result = df_result.rename(columns={'0':'Adelie', '1': 'Chinstrap', '2':'Gentoo'})
 df_result 
 
