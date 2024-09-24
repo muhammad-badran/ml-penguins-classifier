@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.linear_models import LogisticRegression
 
 st.title('Machine Learning App: Penguins Species Prediction')
 
@@ -75,7 +74,7 @@ with st.expander('**Data Preparation**'):
   y
 
 # Model Training and Inference
-clf = LogisticRegression()
+clf = RandomForestClassifier()
 clf.fit(df_penguins[1:],y)
 
 pred = clf.predict(input_row) # gives the predicted class
