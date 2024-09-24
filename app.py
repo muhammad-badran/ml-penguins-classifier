@@ -45,3 +45,7 @@ with st.expander('Input Features'):
   input_df
   st.write('**Combined Dataset**')
   input_penguins
+
+# Encode categorical data
+encode = ['island', 'sex']
+df_penguins = pd.get_dummies(input_penguins prefix=encode)
