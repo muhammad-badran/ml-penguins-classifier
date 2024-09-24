@@ -113,4 +113,6 @@ st.dataframe(df_result,
 penguins_species = np.array(['Adelie', 'Chinstrap', 'Gentoo'])
 st.success(str(penguins_species[pred][0]))
 
+sp = X_raw.value_counts
+sp
 
