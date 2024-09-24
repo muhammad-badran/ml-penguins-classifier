@@ -44,7 +44,7 @@ input_penguin = pd.DataFrame(input_data, index=[0])
 
 with st.expander('Input Features'):
   st.write('**Input Penguin**')
-  input_pengiun
+  input_penguin
 
 # Data Preparation
 # Encode categorical data in X
