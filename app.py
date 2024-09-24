@@ -10,7 +10,7 @@ with st.expander('Data'):
   df = pd.read_csv('https://raw.githubusercontent.com/muhammad-badran/ml-penguins-classifier/refs/heads/main/penguins.csv')
   df
 st.write('The inputs features (X)')
-X = df.drop('species' axis=1)
+X = df.drop('species', axis=1)
 X
 
 st.write('The output vector (y)'):
