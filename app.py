@@ -20,13 +20,7 @@ with st.expander('Data'):
 
 with st.expander('Data Visualization'):
   st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
-
-with st.expander('Input Features'):
-  st.write('**Input Penguins**')
-  input_df
-  st.write('**Combined Dataset**')
-  input_penguins
-
+  
 with st.sidebar:
   st.header('Input Feature')
   island = st.selectbox('Island:', ('Biscoe', 'Dream', 'Torgersen'))
@@ -47,6 +41,13 @@ input_data = {'island': island,
               
 input_df = pd.DataFrame(input_data, index=[0])
 input_penguins = pd.concat([input_df, X_raw], axis=0)
+
+with st.expander('Input Features'):
+  st.write('**Input Penguins**')
+  input_df
+  st.write('**Combined Dataset**')
+  input_penguins
+
 
 # Data Preparation
 # Encode categorical data in X
