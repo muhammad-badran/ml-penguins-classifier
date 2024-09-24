@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.title('Machine Learning App to Classify Penguins')
+st.title('Machine Learning App: Penguins Species Prediction')
 
 st.info('This is a mahcine learning app that builds a model to predict the spieces of penguins.')
 
@@ -22,7 +22,7 @@ with st.expander('Data Visualization'):
   st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
 
 with st.sidebar:
-  st.write('Input Feature')
+  st.header('Input Feature')
   island = st.selectbox('Island:', ('Biscoe', 'Dream', 'Torgersen'))
   gender = st.selectbox('Sex:', ('male', 'female'))
   bill_length_mm = st.slider('Bill Length (mm):', 32.1, 69.6, 43.9)
@@ -38,4 +38,10 @@ input_data = {'island': island,
               
               
 input_df = pd.DataFrame(input_data, index=[0])
-input_df
+input_penguins = pd.concat([input=df, X], axis=0)
+
+with st.expander('Input Features'):
+  st.write('**Input Penguuins**')
+  input_df
+  st.write('**Combined Dataset**')
+  input_penguins
