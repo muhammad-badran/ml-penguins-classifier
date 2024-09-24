@@ -13,7 +13,7 @@ st.write('The inputs features (X)')
 X = df.drop('species', axis=1)
 X
 
-st.write('The output vector (y)'):
+st.write('The output vector (y)')
 y = df.species
 y
 
