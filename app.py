@@ -11,12 +11,12 @@ with st.expander('Data'):
   df
 
   st.write('The inputs features (X)')
-  X = df.drop('species', axis=1)
-  X
+  X_raw = df.drop('species', axis=1)
+  X_raw
 
   st.write('The output vector (y)')
-  y = df.species
-  y
+  y_raw = df.species
+  y_raw
 
 with st.expander('Data Visualization'):
   st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
@@ -30,6 +30,7 @@ with st.sidebar:
   flipper_length_mm = st.slider('Flipper Length (mm):', 172.0 , 231.0, 201.0)
   body_mass_g = st.slider('Body Mass (g):', 2700.0, 6300.0, 4207.0) 
 
+# Create a DataFrame for the input features
 input_data = {'island': island,
               'bill_length_mm': bill_length_mm,
               'bill_depth_mm': bill_depth_mm,
@@ -38,18 +39,28 @@ input_data = {'island': island,
               'gender': gender
              }
               
-              
 input_df = pd.DataFrame(input_data, index=[0])
-input_penguins = pd.concat([input_df, X], axis=0)
+input_penguins = pd.concat([input_df, X_raw], axis=0)
+
+# Encode categorical data in X
+encode = ['island', 'gender']
+df_penguins = pd.get_dummies(input_penguins, prefix=encode)
+input_row = df_penguins[:1]
+
+# Encode y
+target_mapper = {'Adelie': 0,
+                'Chinstrap': 1,
+                'Gentoo': 2
+                }
+
+def target_encode(val):
+  return target_mapper[val]
 
 with st.expander('Input Features'):
   st.write('**Input Penguuins**')
   input_df
   st.write('**Combined Dataset**')
   input_penguins
-
-# Encode categorical data
-encode = ['island', 'gender']
-df_penguins = pd.get_dummies(input_penguins, prefix=encode)
-df_penguins[:1]
+  st.write('**Encode input penguin**')
+  input_row
 
