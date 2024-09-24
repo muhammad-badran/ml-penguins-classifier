@@ -86,7 +86,7 @@ df_result = df_result.rename(columns={'0':'Adelie', '1': 'Chinstrap', '2':'Gento
 
 # Display the predicted speices
 st.subheader('Predict Species')
-st.dataFrame(df_result,
+st.dataframe(df_result,
              column_config={
                'Adelie': st.column_config.ProgressColumn(
                  'Adelie',
