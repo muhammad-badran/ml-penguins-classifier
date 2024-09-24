@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import sklearn
+from sklearn import RandomForestClassifier
 
 st.title('Machine Learning App: Penguins Species Prediction')
 
