@@ -41,7 +41,7 @@ input_data = {'island': island,
              }
               
 input_df = pd.DataFrame(input_data, index=[0])
-X = input_df.values
+X = X_raw.values()
 
 with st.expander('Input Features'):
   st.write('**Input Penguins**')
