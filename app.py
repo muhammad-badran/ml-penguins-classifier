@@ -88,4 +88,4 @@ df_result
 # Display the predicted speices
 st.subheader('Predict Species')
 penguins_species = np.array(['Adelie', 'Chinstrap', 'Gentoo'])
-st.success(str(penguins_species[pred])
+st.success(str(penguins_species[pred]))
