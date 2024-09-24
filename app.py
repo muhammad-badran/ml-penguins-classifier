@@ -49,7 +49,7 @@ with st.expander('Input Features'):
 # Data Preparation
 # Encode categorical data in X
 encode = ['island', 'gender']
-df_penguins = pd.get_dummies(input_df, prefix=encode)
+df_penguins = pd.get_dummies(X_raw, prefix=encode)
 
 # Encode y
 target_mapper = {'Adelie': 0,
