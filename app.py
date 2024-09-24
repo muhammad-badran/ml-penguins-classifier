@@ -24,7 +24,7 @@ with st.expander('Data Visualization'):
 with st.sidebar:
   st.header('Input Feature')
   island = st.selectbox('Island:', ('Biscoe', 'Dream', 'Torgersen'))
-  sex = st.selectbox('Sex:', ('male', 'female'))
+  gender = st.selectbox('Sex:', ('male', 'female'))
   bill_length_mm = st.slider('Bill Length (mm):', 32.1, 69.6, 43.9)
   bill_depth_mm = st.slider('Bill Depth (mm):', 13.1,  21.5, 17.2)
   flipper_length_mm = st.slider('Flipper Length (mm):', 172.0 , 231.0, 201.0)
@@ -35,7 +35,7 @@ input_data = {'island': island,
               'bill_depth_mm': bill_depth_mm,
               'flipper_length_mm': flipper_length_mm,
               'body_mass_g': body_mass_g,
-              'sex': sex
+              'gender': gender
              }
               
               
@@ -49,7 +49,7 @@ with st.expander('Input Features'):
   input_penguins
 
 # Encode categorical data
-encode = ['island', 'sex']
+encode = ['island', 'gender']
 df_penguins = pd.get_dummies(input_penguins, prefix=encode)
 df_penguins[:1]
 
