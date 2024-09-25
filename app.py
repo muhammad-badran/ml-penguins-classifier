@@ -68,6 +68,8 @@ with st.expander('**Data Preparation**'):
   st.write('**Encode X (input penguin)**')
   input_row = df_penguins[:1]
   input_row
+  st.write('**Combined Data**')
+  df_penguins
   st.write('**Encoded X**')
   df_penguins[1:]
   st.write('**Encoded y**')
